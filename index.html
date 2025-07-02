@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+<div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+   <header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider"> الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+ <button id="toggle-btn">
+  <i id="icon" class="fa-solid fa-moon"></i>
+</button>
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+ <!-- slider home -->
+    <div class="slider" id="slider">
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+              <img src="https://i.ibb.co/cpH56Gt/img1.png">
+                <div class="content">
+                    <p>التراث غيرالمادي</p>
+                    <h2>اكتشف التراث غير المادي </h2>
+                    <p>
+                        التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/8n8w5Ly6/img2.jpg">
+                <div class="content">
+                    <p>التراث غيرالمادي</p>
+                    <h2> ذاكرة و وروح الحضارة</h2>
+                    <p>
+                        إنه ليس مجرد ماضٍ يُروى، بل هو حاضر نعيشه وننقله للأجيال القادمة، ليبقى نابضًا بالحياة في وجدان الأمة.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/NdWfqXVB/img3.jpg">
+                <div class="content">
+                    <p>التراث غيرالمادي</p>
+                    <h2>الحفاظ على التراث  اللامادي.</h2>
+                    <p>
+                       وتتمثل الثقافة المادية في العمارة عامة كالمواقع الأثرية، والمدن العتيقة، والمتاحف الافتراضية أو المتاحف التي بلا حدود خاصة،
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/2789FhX5/img4.jpg">
+                <div class="content">
+                    <p>التراث غيرالمادي</p>
+                    <h2>
+التراث الثقافي غير المادي </h2>
+                    <p>
+                        يشتمل الجانب اللامادي للثقافة على كل ما يبتكره الإنسان ويستخدمه في تفسير سلوكه وأفعاله وتوجيهها
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/0RkKTbkZ/img5.jpg">
+                <div class="content">
+                     <p>التراث غيرالمادي</p>
+                    <h2>
+التراث الثقافي غير المادي </h2>
+                    <p>
+                        فالثقافة اللامادية تشمل دائمًا أشياء غير واضحة وليست ملموسة، ولكنها تؤدي دورًا مهمًّا في سلوكنا وحياتنا اليومية، مثل الدور الذي تؤديه العادات والتقاليد والأعراف والقيم وغيرها.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+              <img src="https://i.ibb.co/cpH56Gt/img1.png">
+                <div class="content">
+                    اكتشف عن التراث
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/8n8w5Ly6/img2.jpg">
+                <div class="content">
+                    ذاكرة الشعوب
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/NdWfqXVB/img3.jpg">
+                <div class="content">
+                    الحفاظ على التراث
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/2789FhX5/img4.jpg">
+                <div class="content">
+                    عن التراث 
+                </div>
+            </div>
+            <div class="item">
+              <img src="https://i.ibb.co/0RkKTbkZ/img5.jpg">
+                <div class="content">
+                    تراث اجدادنا 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="About" id="About">
+        <div class="About-img">
+          <img src="https://i.ibb.co/Nn64zQgb/About-img2-jpg.png" alt="" srcset="">
+        </div>
+         <div class="About-text">
+          <div class="text" style="display: flex;">
+            <h2>  من هنا بدأت الحكاية <span>(التراث غير المادي)</span></h2>
+            <img src="product1.png"  class="im-m" style="margin-right: 5px; width: 30px;"  alt="" srcset="">
+          </div>
+         <p class="mine">   ينعكس التراث  في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية، ومرافقها المتعددة التي تجسد تاريخ المنطقة مثل القلاع، والحصون، والمساجد، ومرافئ الصيد، وأسواق السمك، وأرصفة بناء القوارب، ومراكز تدريب الصقور، وأسواق الذهب، وأسواق البهار، وغيرها.</p>
+        <div class="infos">
+          <div class="fo">
+            <img src="icons.png" alt="" srcset="">
+            <p>الفعاليات الثقافية والمهرجانات</p>
+          </div>
+            <div class="fo">
+            <img src="icons.png" alt="" srcset="">
+            <p>متحف التاريخ الطبيعي للتراث العربي</p>
+          </div>
+            <div class="fo">
+            <img src="icons.png" alt="" srcset="">
+            <p>تطور الفكر الثقافي ونضج فكرة الحفاظ على التراث</p>
+          </div>
+            <div class="fo">
+            <img src="icons.png" alt="" srcset="">
+            <p>الحرف والمنتجات التقليدية</p>
+          </div>
+        </div>
+        <div class="btns">
+        <a href="heritage.html"><button class="btn brown">تعرف على المزيد </button></a>  
+       <a href="heritage.html"> <button class="btn white">أكتشف التراث الغير مادي</button></a>  
+        </div>
+        </div>
+    </section>
+    <section class="t-gole">
+   
+     <div class="text-t">
+      <h1>,,</h1>
+      <h2>نحمي تراثنا لنُضيء به دروب المستقبل، ونبني وطناً يُجسّد الطموح والاعتزاز بالهوية.</h2>
+      <p>تراثنا أساس هويتنا، وطموحنا أن نبني مستقبلاً مزدهراً يُفاخر به الأجداد ويُلهم الأجيال.
+        ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية، ومرافقها المتعددة التي تجسد تاريخ المنطقة مثل القلاع، والحصون، والمساجد، ومرافئ الصيد، وأسواق السمك، وأرصفة بناء القوارب، ومراكز تدريب الصقور، وأسواق الذهب، وأسواق البهار، وغيرها.
+      </p>
+      <a href="heritage.html"> <button class="btn brown"> ماذا يقول ماضينا؟</button></a>
+
+     </div>
+       <div class="img-t">
+        <img src="https://i.ibb.co/KR8dFhW/tree.png" alt="" srcset="">
+     </div>
+    </section>
+    <section class="sever" id="sever">
+        <div class="tex-sev">
+          <div class="t">      
+            <h2>أمثلة على التراث غير المادي العربي</h2>
+          </div>
+           <a href="heritage.html"><button class="btn white">تصفح المزيد  </button></a> 
+        </div>
+        <div class="cards">
+            <div class="card">
+              <img src="https://i.ibb.co/rK87BVLT/server-1.jpg" alt="">
+                <div class="text-card">
+                    <p class="onep"> احتفال شعبي</p>
+                    <h2>    الطقوس والاحتفالات الشعبية السنويه</h2>
+                    <p class="twop">يعود أصل فن العازي إلى الاحتفالات بالنصر والمناسبات العامه ، حيث كان يُلقى في ساحات القتال، 
+                      وتوارثته الأجيال. يتكون من أبيات مقفّاة على غرار الشعر العربي، ويُستخدم لتوثيق التاريخ والبطولات والعادات.</p>
+                    <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+             <div class="card">
+              <img src="https://i.ibb.co/HDZCk1zD/server-3.jpg" alt="">
+                <div class="text-card">
+                    <p class="onep"> الحرف اليدوية</p>
+                    <h2>    الحرف اليدوية التقليدية الشعبية</h2>
+                    <p class="twop">تتميز الزخارف الشعبية الخليجية بأشكال هندسية تمثل الطبيعة كالكثبان الرملية، وأشجار النخيل، والإبل، والصقور، وأسماء القبائل، والمساجد، لتعكس الحياة البدوية والروح الدينية في المنطقة.</p>
+                  <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+             <div class="card">
+              <img src="https://i.ibb.co/Q3BGQpQV/server-5.jpg" alt="">
+                <div class="text-card">
+                    <p class="onep">  الفنون الأدائية</p>
+                    <h2>  الفنون الأدائية والموسيقية الشعبية </h2>
+                    <p class="twop">يعبّر شعر العاشق في التراث الخليجي عن مشاعر الوفاء تجاه الحبيب والأقارب والأصدقاء وشيخ القبيلة، ويُعد هذا اللون الشعري وسيلة للتعبير عن الروابط الاجتماعية وتوثيق المشاعر الأصيلة.</p>
+
+                    <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+            
+               <div class="card">
+                <img src="https://i.ibb.co/qMR9z1dB/ba6.jpg" alt="">
+                <div class="text-card">
+                    <p class="onep"> المعارف التقليدية</p>
+                    <h2>المعارف التقليدية المرتبطة بالطبيعة</h2>
+                    <p class="twop">ساهمت رياضة الصيد بالصقور في ترسيخ الهوية الخليجية، حيث اعتمدت كوسيلة للعيش والصيد، وأصبحت جزءًا من التراث غير المادي المعترف به عالميًا في اليونسكو، لما لها من أهمية ثقافية واجتماعية.</p>
+                   <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+             <div class="card">
+              <img src="https://i.ibb.co/Rk8PKCL3/server-4.jpg" alt="">
+                <div class="text-card">
+                    <p class="onep">  عادات وتقاليد</p>
+                    <h2> القهوة العربية</h2>
+                    <p class="twop">يُعد تقديم القهوة العربية من أهم رموز الكرم والضيافة في الخليج. وقد ارتبطت بعادات الجلسات والمجالس، حيث يتم تقديمها للضيوف تعبيرًا عن الاحترام، وتوارثتها الأجيال كجزء من الهوية الثقافية.</p>
+                    <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+             <div class="card">
+              <img src="https://i.ibb.co/LXM9bfgT/server-8.jpg">
+                <div class="text-card">
+                    <p class="onep"> المجلس الشعبية</p>
+                    <h2>  المجالس التقليدية الشعبية </h2>
+                    <p class="twop">يُعد المجلس من أبرز رموز الحياة الاجتماعية في التراث العربي الغير مادي  في  دول الخليج، إذ يجمع الرجال للنقاش  في الامور الساسية والاجتماعيه  وتبادل الرأي.
+                       وقد أُدرج رسميًا ضمن قائمة التراث الثقافي غير المادي في اليونسكو عام 2015 لرمزيته العريقة.</p>
+                    <button class="btn"> <a href="heritage.html">تعرف على المزيد</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="book" id="book">
+            <h1 class="library-title">هنا تبدأ رحلتك في عالم الحكايات والأمثال والموروث العربي الأصيل.</h1>
+            
+        <div class="bookshop">
+       <div class="img-b">
+        <img src="https://i.ibb.co/67PDxSy7/download.png" alt="" srcset="">
+       </div>
+        
+     <div class="text-b">
+      <!-- <h1>,,</h1> -->
+      <h2>أهلاً بك في  المكتبة الرقمية للتراث الشعبي العربي  ، حيث تنبض الذاكرة، وتُروى الحكاية، وتُحفظ الهوية.</h2>
+      <p>نحن لا نقدّم مجرد مكتبة… بل نعيد إحياء قرون من الحكايات، الأمثال، الأغاني، الشعر النبطي، العادات، التقاليد، الأزياء، الحرف اليدوية، والطقوس اليومية التي شكّلت ملامح الإنسان العربي في مختلف البيئات، من الخليج إلى المحيط.</p>
+ <a href="book.html"> <button class="btn brown">أكتشف المزيد</button></a>
+
+     </div>
+    </div>
+    </section>
+  
+    
+    <section class="map" id="map">
+      <h1>الخريطة التفاعلية للتراث العربي الاصيل</h1>
+  <div class="map-container">
+    <img src="https://i.ibb.co/8gFJwKTP/map-jfif.png" alt="خريطة الخليج" class="map-image">
+    <button class="info" onclick="goTo('saudi.php')"> <i class="fa-regular fa-font-awesome"></i>  أنقر عل الدوله التي تبحث عن تراثها  </button>
+   <a href="saudi.html"> <button class="country-button saudi" onclick="goTo('saudi.php')">السعودية</button></a>
+   <a href="UAE.html"> <button class="country-button uae" onclick="goTo('UAE.php')">الإمارات</button></a>
+    <a href="Kuwait.html"><button class="country-button kuwait" onclick="goTo('kuwait.php')">الكويت</button></a>
+   <a href="Qatar.html"> <button class="country-button qatar" onclick="goTo('qatar.php')">قطر</button></a>
+       <a href="Bahrain.html"><button class="country-button bahrain" onclick="goTo('bahrain.php')">البحرين</button></a>
+       <a href="Oman.html"><button class="country-button oman" onclick="goTo('oman.php')">عُمان</button></a>
+       <a href="egypt.html"><button class="country-button egypt" onclick="goTo('egypt.php')">مصر</button></a>
+       <a href="yemen.html"><button class="country-button yemen" onclick="goTo('yemen.php')">اليمن</button></a>
+       <a href="jordan.html"><button class="country-button jordan" onclick="goTo('jordan.php')">الأردن</button></a>
+       <a href="iraq.html"><button class="country-button iraq" onclick="goTo('iraq.php')">العراق</button></a>
+       <a href="sudan.html"><button class="country-button sudan" onclick="goTo('sudan.php')">السودان</button></a>
+       <a href="libya.html"><button class="country-button libya" onclick="goTo('libya.php')">ليبيا</button></a>
+       <a href="morocco.html"><button class="country-button morocco" onclick="goTo('morocco.php')">المغرب</button></a>
+       <a href="palestine.html"><button class="country-button palestine" onclick="goTo('palestine.php')">فلسطين</button></a>
+       <a href="syria.html"><button class="country-button syria" onclick="goTo('syria.php')">سوريا</button></a>
+   <a href="tunisia.html"><button class="country-button tunisia" onclick="goTo('tunisia.php')">تونس</button></a>
+   <a href="lebanon.html"><button class="country-button lebanon" onclick="goTo('lebanon.php')">لبنان</button></a>
+   <a href="algeria.html"><button class="country-button algeria" onclick="goTo('algeria.php')">الجزائر</button></a>
+
+  </div>
+    </section>
+    <section class="t-gole" style="background-color: #f9f6ed;
+    justify-content: center;  text-align:center ; box-shadow: 1px 0 10px #e9e8e6e1; border:1px solid #b8a352; margin-top: 100px;">
+   
+      <div class="text-t">
+       <!-- <h1>,,</h1> -->
+       <h2 style="margin-top: 25px; ">ألغاز تراثية من الوطن العربي</h2>
+       <p>
+        قبل أن تبدأ مغامرتك في حل الألغاز الممتعة، نود دعوتك لتصفح الموقع والتعرف على التراث المادي لكل دولة من دولنا العربية العريقة. فهذا التراث هو كنز حقيقي يجمع بين حضارات وتقاليد عمرها آلاف السنين، ويعكس حكمة وأسلوب حياة الأجداد.
+       </p>
+      <div class="btns" style="margin-top: 20px;">
+        <a href="heritage.html"> <button class="btn brown">   لتصفح الموقع </button></a>
+        <a href="qustion.html"> <button class="btn white">    ابدأ التحدي </button></a>
+      </div>
+  
+  
+      </div>
+        <!-- <div class="img-p">
+         <img src="q.jfif"   alt="" srcset="">
+      </div> -->
+     </section>
+  
+  <section class="faq-section">
+    <h1>الأسئلة الشائعة</h1>
+     <p>إذا كانت لديك أي استفسارات إضافية، لا تتردد في الاتصال بنا. نحن هنا <br>لمساعدتك وتحقيق رؤيتك بأفضل شكل ممكن.</p>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span class="question">ما هو  مفهوم التراث ؟</span>
+          <span class="icon">＋</span>
+        </div>
+        <div class="accordion-body">
+        مجموعة من الموروثات التي تم نقلها من الجيل السابق -الآباء والأجداد- إلى الجيل الحالي، وتتعدد هذه الموروثات بين موروثات مادّية مثل الأدوات والمعدّات وطريقة صناعتها، ومعنوية مثل العادات والتقاليد المعمول بها، ومن دون التراث فإنه لن يكون تواجدََا للحضارة التي تميّز الشعوب عن بعضها البعض وتعطي لها كيانََا ويحفظ وارثيه من الضياع والتشرّد في حال التعرّض للتهديدات والضغوطات السياسية مثل الحروب التي تشرّد الأفراد والجماعات عن بعضهم البعض 
+        </div>
+      </div>
+
+       <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="question">ماهو التراث الغير مادي؟</div>
+          <span class="icon">＋</span>
+        </div>
+        <div class="accordion-body">
+          التراث الغير مادي هو مجموعة من الممارسات الثقافية والمعارف التقليدية التي تتناقلها الأجيال عبر الزمن. يتميز هذا النوع من التراث بأنه غير ملموس، ولكنه يعكس القيم والمعتقدات التي تشكل هوية المجتمع. 
+        </div>
+      </div>
+
+       <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span class="question">ماهي أهمية التراث الغير مادي؟</span>
+          <span class="icon">＋</span>
+        </div>
+        <div class="accordion-body">
+         يشكل التراث الغير مادي ركيزة أساسية للحفاظ على الهوية الثقافية وتعزيز التماسك الاجتماعي والتنمية المستدامة من خلال الحفاظ على العادات والتقاليد الشعبية.
+        </div>
+      </div>
+
+       <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span class="question">     ماهي التحديات التي تواجه التراث الغير مادي؟</span>
+          <span class="icon">＋</span>
+        </div>
+        <div class="accordion-body">
+      غياب التشريعات القانونية التي تنظم العمل في مجال التراث غير المادي وتحفظه، فلا يوجد قانون صريح للتراث الثقافي غير المادي، كما لا يوجد قانون يحمي التراث المهدد من الضياع، أو يشجّع انتقاله عبر الأجيال. تعدّد الجهات التي تمنح التراخيص للعاملين في المجالات المتعلقة بالتراث الثقافي غير المادي.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span class="question"> ماهي طرق الحفاظ على التراث الغير مادي؟ </span>
+          <span class="icon">＋</span>
+        </div>
+        <div class="accordion-body">
+         تُعتبر التوعية والتعليم من أهم وسائل الحفاظ على التراث الغير مادي. يتمثل ذلك في إدراج مواضيع التراث في المناهج الدراسية، وتنظيم ورش عمل وندوات لتعزيز الوعي بأهمية الحفاظ على التراث. كما تُساهم المبادرات المجتمعية وحملات التوعية في نشر المعرفة حول قيمة التراث الغير مادي وحمايته.
+        </div>
+      </div>
+
+      <!-- يمكنك تكرار المزيد من العناصر هنا -->
+
+    </div>
+  </section>
+  
+  
+  <img src="footer-element.svg" class="element" alt="">
+<footer class="footer" id="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 		<a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+  	 			<ul>
+  	 			<p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+          <h4>   أقسام الموقع: </h4>
+          <ul>
+            <li><a href="index.html"> الصفحة الرئيسية</a></li>
+            <li><a href="heritage.html"> عن التراث</a></li>
+            <li><a href="book.html"> المكتبة الرقمية </a></li>
+            <li><a href="index.html#map">  خريطه التراث</a></li>  	 	
+            <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+             </ul>
+        </div>
+  	 		<div class="footer-col">
+  	 			<h4>روابط الموقع: </h4>
+  	 			<ul>
+  	 				<li><a href="index.html#slider">الرئيسية</a></li>
+  	 				<li><a href="index.html#About">عن التراث</a></li>
+  	 				<li><a href="index.html#sever">المعرض</a></li>
+  	 				<li><a href="index.html#book">المكتبة</a></li>
+  	 				<li><a href="index.html#map">خريطة التراث</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>تابعنا على: </h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+    
+  </footer>
+  <div class="last-coun">
+    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+   </div>
+   <div onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</div>
+   <script src="main.js"></script>
+</body>
+</html>
+
+

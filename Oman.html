@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+  <section class="Cuntry-Home">
+    <img class="mine" src="" alt="" srcset="">
+    <div class="ba-cun om">
+      <ul>
+        <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+        <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+        <li><a href="" class="towli">  التراث العماني  </a></li>
+    </ul>
+    </div>
+
+   <div class="text-one">
+   <div class="border">
+    <h2 style="padding-right: 30px;font-weight: 500;">نبذة  عن التراث العماني</h2>
+    <div class="dis">
+      <h3>تــراثــنـــا دلـــــيل هويتنا </h3>
+      <p>يشمل التراث غير المادي حسب تعريف اليونسكو لتقاليد أو أشكال التعبير الحية الموروثة من أسلافنا والتي ستنقل إلى أحفادنا، مثل التقاليد الشفهية، وفنون الأداء، والممارسات الاجتماعية، والطقوس، والمناسبات الاحتفالية، والمعارف والممارسات المتعلقة بالطبيعة والكون، أو المعارف والمهارات المرتبطة بإنتاج الصناعات الحرفية التقليدية. ويشكل التراث الثقافي غير المادي، بالرغم من طابعه الهش، عاملاً مهماً في الحفاظ على التنوع الثقافي في مواجهة العولمة المتزايدة. ففهم التراث الثقافي غير المادي للجماعات المختلفة يساعد على الحوار بين الثقافات ويشجع على الاحترام المتبادل لطريقة عيش الآخر. ولا تكمن أهمية التراث الثقافي غير المادي في مظهره الثقافي بحد ذاته وإنما في المعارف والمهارات الغنية التي تنقل عبره من جيل إلى آخر. والقيمة الاجتماعية والاقتصادية التي ينطوي عليها هذا النقل للمعارف تهم الأقليات مثلما تهم الكتل الاجتماعية الكبيرة، وتهم البلدان النامية مثلما تهم البلدان المتقدمة.</p>
+    </div>
+   </div>
+   <div class="all-co">
+    <div class="mnue-co">
+    <a href=""><p>نبذة</p></a>
+     <a href=""><p">العيالة</p></a>
+     <a href=""><p>العازي</p></a>
+     <a href=""><p>المجلس</p></a>
+     <a href=""><p>الرزفة</p></a>
+     <a href=""><p>الأداء</p></a>
+     <a href=""><p">الصقارة</p></a>
+    </div>
+    <div class="co-te">
+      <h2>الفنون الشعبية </h2>
+      <img src="https://i.ibb.co/6J4cRBST/o-1.jpg" alt="" srcset="">
+      <p>
+      وهناك عدد كبير من الفنون الشعبية التي تمارس ، داخل سلطنة عمان قديما  مثل العازي والبرعه والهبوت والرزفهو المديمة وغيرها الكثير.
+
+فن البرعة هو احد فنون المرح بالسلطنة، ويؤديها عدد 2 من الأفراد ، ويمسك كلا منهما بيده اليسرى دشداشته  وهي مثبته بوسطه وفي اليد اليمنى يمسكا خنجرا .
+
+ويتحركا بحركة انسجامية بقفزة يرتفع فيها أحد القدمين من على الأرض ، ويقوما بالتقدم والرجوع عن طريق ظهرهما ، كما يدورا حول نفسهما بدورة كاملة ثم يجلسا وتقوم فرقة موسيقية بضبط الإيقاع والغناء .
+
+ويشارك بالفرقة اثنان أو ما يزيد يقومون بالطبل المهجر وعازف بالقصبة واثنان أو اكثر من ممارسي الطبل الصغير ( الطبل المرواس) وتظهر البرعة في الاحتفالات الاجتماعية مثل الزواج ويمارس فيها الأغاني .
+
+فن الغازي
+
+يعد فن الغازي نوع من أنواع الفنون الشعبية الشهيرة جدا في سلطنة عمان ، حيث تم إدراج فن الغازي ضمن القوائم التمثيلية التراث الثقافي غير المادي للإنسانية في منظمة الأمم المتحدة للتربية ، والعلوم  ، والثقافة ، كما أنه يعد فن من فنون الإلقاء الشعري .
+
+
+    </p>
+      
+      <h2>الأزياء الرجالي</h2>
+      <img src="https://i.ibb.co/1tLC4HW8/o-2.jpg" alt="" srcset="">
+      <p>
+      لدشداشة من الأزياء الرجالية المعروفة في السلطنة فهي ذات عنق مستدير تحتوي على شريط له ألوان مختلفة عن لون الدشداشة وله فراخة أو كركوشة تكون متدلية على الصدر، والتي تكون مليئة بالعطور والبخور، بالإضافة إلى التطريز الذي يلفها بفن وذوق رفيع وعادة يكون لونه بلون الدشداشة، وتختلف أشكالها بين محافظات سلطنة عمان ويتجلى هذا الاختلاف في درجة التطريز و مكانه.
+
+الأزياء النسائية
+
+يختلف التراث العماني النسائي حسب المناطق ولكنه يشترك بثلاث قطع أساسية :
+
+•السروال أو البنطلون يكون مطرزاً و يختلف في شكل التطريز بحسب المناطق العمانية ،ويمتاز باتساعه ولكنه يكون ضيق من القدمين.
+
+•الثوب ويسمى أيضاً الدشداشة أو الكندورة، يتميز بقصره من الأمام وطوله من الخلف، ويحتوي على الأكمام وتطرز بشكل يدوي بمادة السيم والغولي ، ويزين بالخرز والترتر ، ويلبس فوق السروال.
+
+•الشيلة وهي تعتبر غطاء للرأس ، ويستخدم الترتر والخرز لتزيينها وتتداخل الألوان فيها عن طريق إضافة خيوط ملونة تسمى الحضية أو الشلاشل ، ولها أسماء متعددة مثل الفتقة واللحاف والليسو وغيرها من الأسماء المحلية</p>
+    
+     
+    </div>
+   </div>
+  </div>
+  </section>
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+        <a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+          <ul>
+          <p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+          </ul>
+        </div>
+        <div class="footer-col">
+         <h4>   أقسام الموقع: </h4>
+         <ul>
+           <li><a href="index.html"> الصفحة الرئيسية</a></li>
+           <li><a href="heritage.html"> عن التراث</a></li>
+           <li><a href="book.html"> المكتبة الرقمية </a></li>
+           <li><a href="index.html#map">  خريطه التراث</a></li>  	 	
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+            </ul>
+       </div>
+        <div class="footer-col">
+          <h4>روابط الموقع: </h4>
+          <ul>
+            <li><a href="index.html#slider">الرئيسية</a></li>
+            <li><a href="index.html#About">عن التراث</a></li>
+            <li><a href="index.html#sever">المعرض</a></li>
+            <li><a href="index.html#book">المكتبة</a></li>
+            <li><a href="index.html#map">خريطة التراث</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا على: </h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+ </footer>
+ <div class="last-coun">
+   <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+  </div>
+   <script src="main.js"></script>
+</body>
+</html>

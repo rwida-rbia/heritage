@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+    <section class="Cuntry-Home">
+    <img class="mine" src="" alt="" srcset="">
+    <div class="ba-cun suid">
+      <ul>
+        <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+        <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+        <li><a href="" class="towli">  التراث السعودي  </a></li>
+    </ul>
+    </div>
+
+   <div class="text-one">
+   <div class="border">
+    <h2 style="padding-right: 30px;font-weight: 500;">نبذة  عن التراث السعودي</h2>
+    <div class="dis">
+      <h3>تــراثــنـــا دلـــــيل هويتنا </h3>
+      <p>يشمل التراث غير المادي حسب تعريف اليونسكو لتقاليد أو أشكال التعبير الحية الموروثة من أسلافنا والتي ستنقل إلى أحفادنا، مثل التقاليد الشفهية، وفنون الأداء، والممارسات الاجتماعية، والطقوس، والمناسبات الاحتفالية، والمعارف والممارسات المتعلقة بالطبيعة والكون، أو المعارف والمهارات المرتبطة بإنتاج الصناعات الحرفية التقليدية. ويشكل التراث الثقافي غير المادي، بالرغم من طابعه الهش، عاملاً مهماً في الحفاظ على التنوع الثقافي في مواجهة العولمة المتزايدة. ففهم التراث الثقافي غير المادي للجماعات المختلفة يساعد على الحوار بين الثقافات ويشجع على الاحترام المتبادل لطريقة عيش الآخر. ولا تكمن أهمية التراث الثقافي غير المادي في مظهره الثقافي بحد ذاته وإنما في المعارف والمهارات الغنية التي تنقل عبره من جيل إلى آخر. والقيمة الاجتماعية والاقتصادية التي ينطوي عليها هذا النقل للمعارف تهم الأقليات مثلما تهم الكتل الاجتماعية الكبيرة، وتهم البلدان النامية مثلما تهم البلدان المتقدمة.</p>
+    </div>
+   </div>
+   <div class="all-co">
+    <div class="mnue-co">
+    <a href=""><p>نبذة</p></a>
+     <a href=""><p">العيالة</p></a>
+     <a href=""><p>العازي</p></a>
+     <a href=""><p>المجلس</p></a>
+     <a href=""><p>الرزفة</p></a>
+     <a href=""><p>الأداء</p></a>
+     <a href=""><p">الصقارة</p></a>
+    </div>
+
+   <div class="co-te">
+ 
+    <h2>القط العسيري</h2>
+    <img src="https://i.ibb.co/B5q2Sm3x/sudi1.jpg" alt="" srcset="">
+    <p>تتوزع المفردات البصرية للقط العسيري على عشرة أنواع، هي: "البنات" وترمز إلى الأنثى وتأتي في أعلى نقش "القط" عادة، و"الأرياش" تأتي على شكل نباتات، و"المحاريب" ترمز إلى الجانب الديني في المجتمع، و"الركون" أشكال مثلثة متجاورة وكبيرة، و"البلسنة" دوائر صغيرة ومنقطة، و"الأمشاط" خطوط متوازية، تتجه إلى الأعلى أو الأسفل، و"التعذيق" ثلاث نقاط شبيهة بعذوق الذرة، و"المثالث والمخامس" خطوط متوازية ما بين الثلاث والخمس، تأتي في أسفل النقش، و"الكف" خطوط متوازية تأتي أسفل جدار الغرفة بألوان مختلفة، و"الشبكة" رمز فني بلون واحد، يتكون من معينات ومربعات هندسية.</p>
+  
+    <h2>البن الخولاني السعودي</h2>
+    <img src="https://i.ibb.co/4wp2yJz7/sudi2.jpg" alt="" srcset="">
+    <p>سمي البن الخولاني بذلك نسبة إلى قبيلة خولان بن عامر التي تقطن الجبال الممتدة بين السعودية واليمن، حيث تقوم بزراعته لأكثر من 300 عام،ويطلق عليه كذلك الذهب الأخضر، والشجرة المدللة،ويعد البن الخولاني من أغلى أنواع البن في العالم وأندرها، إذ يتميز برائحته الخاصة، والطبقة الزيتية التي تغلفه. ولأن منطقة جازان تتمتع بالظروف المناخية والجغرافية المناسبة،يزرع البن في المرتفعات الجبلية التي يتراوح ارتفاعها من 1000 إلى 1800م فوق مستوى سطح البحر.</p>
+    
+    <h2>القهوة السعودية</h2>
+    <img src="https://i.ibb.co/zVKsHY9Q/sudi3.jpg" alt="" srcset="">
+    <p>وتحضر القهوة السعودية من خلال مكونين أساسيين، هما: حبوب القهوة (البن)، والهيل، وأضيفت لاحقًا أنواع أخرى من الحبوب والأعشاب والنكهات، مثل: الزنجبيل والزعفران والقرنفل والشمرة. ويكون إعدادها، بدءا بتحميص حبوب القهوة في مقلاة غير عميقة، ثم طحنها باستخدام هاون ومدق نحاسيين، بعد ذلك توضع على موقد نار في دلة نحاسية، ثم تزال القهوة من على النار، وتترك جانبًا لترتاح.</p>
+  
+     <h2>الصقارة </h2>
+    <img src="https://i.ibb.co/SX0ZSxGL/sudi4.jpg" alt="" srcset="">
+    <p>يُؤَدَّى هذا الفن في الاحتفالات والمناسبات الوطنية والاجتماعية، حيث تُعدُّ الرزفة من الفنون الشعبيّة الإماراتية التي تجمع بين الشعر والرقص باستخدام عِصِي الخيزران الرفيعة. بينما اعتاد الناس في الماضي على استخدام السيوف والخناجر بدلاً من العِصِي في أداء هذا الفن. انتشرت الرزفة في جميع أرجاء الإمارات، واجتازت المدن والمناطق الساحلية والجبلية، بعد أن كانت محصورة بين القبائل وسكان منطقة الظفرة غربي إمارة أبوظبي.</p>
+   
+    <h2>حياكة السدو</h2>
+    <img src="https://i.ibb.co/9mWVgd2N/sudi5.jpg" alt="" srcset="">
+    <p>تعد حياكة السدو من أقدم الحرف التقليدية المنتشرة في بادية الجزيرة العربية،حيث كانت تعتمد على وبر الإبل، وشعر الماعز، وصوف الأغنام، سواء النجدي الذي يأتي صوفه أسود، أو النعيمي صاحب الصوف الأبيض، إلا أنها أصبحت تعتمد اليوم على الصوف الصناعي،وتستغرق حياكة القطعة الواحدة  للسدو من ثلاثة إلى أربعة أيام حسب الحجم.</p>
+   
+    <h2>نخيل التمر</h2>
+    <img src="https://i.ibb.co/1GYTXfkT/sudi6.jpg" alt="" srcset="">
+    <p>تنتشر في معظم مناطق السعودية زراعة النخيل، عدا منطقتي جبال السروات، وتهامة الجنوبية، لانعدام الظروف المناخية المناسبة لزراعة النخيل،وبحسب التربة والمناخ وتوافر المياه، قسمت المناطق الزراعية إلى ثلاث مجموعات، هي "مجموعة الواحات الشرقية" وتشمل واحة الأحساء، وواحة يبرين، و"مجموعة الواحات الشمالية والوسطى" يمتد نطاقها من الجوف وحائل شمالًا، مرورًا بمناطق القصيم والسر والوشم وسدير والزلفي والعارض والرياض والخرج وحوطة بني تميم والحريق والأفلاج، حتى وادي الدواسر، و"مجموعة الواحات الغربية والغربية الجنوبية"، وهي الواحات الموجودة في المدينة المنورة، وينبع، وخيبر، والحائط، وبيشة، ورنية، وشمال شرق أبها، وتربة، والخرمة شرق الطائف، وبلدة العقيق شرقي الباحة،وذي عين في تهامة الباحة، ونجران.</p>
+
+  </div>
+  </div>
+  </div>
+  </section>
+
+
+  <footer class="footer" id="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 		<a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+  	 			<ul>
+  	 			<p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+          <h4>   أقسام الموقع: </h4>
+          <ul>
+            <li><a href="index.html"> الصفحة الرئيسية</a></li>
+            <li><a href="heritage.html"> عن التراث</a></li>
+            <li><a href="book.html"> المكتبة الرقمية </a></li>
+            <li><a href="index.html#map">  خريطه التراث</a></li>  	 	
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+    
+             </ul>
+        </div>
+  	 		<div class="footer-col">
+  	 			<h4>روابط الموقع: </h4>
+  	 			<ul>
+  	 				<li><a href="index.html#slider">الرئيسية</a></li>
+  	 				<li><a href="index.html#About">عن التراث</a></li>
+  	 				<li><a href="index.html#sever">المعرض</a></li>
+  	 				<li><a href="index.html#book">المكتبة</a></li>
+  	 				<li><a href="index.html#map">خريطة التراث</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>تابعنا على: </h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+    
+  </footer>
+  <div class="last-coun">
+    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>
