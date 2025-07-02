@@ -27,6 +27,7 @@ next.onclick = function(){
   }
   showSlider();
 }
+
 //event prev click
 prev.onclick = function(){
   itemActive = itemActive - 1;
@@ -202,3 +203,111 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+const questions = [
+  { question: "1. ما المقصود بالتراث غير المادي؟", options: ["المباني التاريخية", "العادات والتقاليد والمهارات المتوارثة", "القطع الأثرية"], correct: "العادات والتقاليد والمهارات المتوارثة" },
+  { question: "2. أي من التالي يُعد من أمثلة التراث غير المادي؟", options: ["الأسواق القديمة", " الأدوات الحجرية", "لرقصات الشعبية"], correct: "لرقصات الشعبية" },
+  { question: "3. أين يُحفظ التراث غير المادي غالبًا؟", options: ["في المتاحف فقط", "في عقول الناس وممارساتهم", "في الأسواق"], correct: "في عقول الناس وممارساتهم" },
+  { question: "4.ما أهمية الحفاظ على التراث غير المادي؟", options: ["لأنه يشكل جزءًا من هوية المجتمع وثقافته", "  لأنه نوع من التسلية", " لأنه مفيد في البناء فقط"], correct: "لأنه يشكل جزءًا من هوية المجتمع وثقافته " },
+  { question: "5.من أنواع التراث غير المادي:", options: ["لعملات الفضية ", "لأبراج والمباني", "الشعر الشعبي والحداء"], correct: "الشعر الشعبي والحداء" },
+  { question: "6. كيف يمكن أن نُسهم في حفظ التراث غير المادي؟ ", options: ["بعدم نقله للآخرين", "بتوثيقه وممارسته وتعليمه", "تجاهله وتركه"], correct: "بتوثيقه وممارسته وتعليمه" },
+];
+
+const container = document.getElementById("questions");
+const startBtn = document.getElementById("startBtn");
+const checkBtn = document.getElementById("checkBtn");
+const timerDiv = document.getElementById("timer");
+const result = document.getElementById("result");
+const details = document.getElementById("details");
+
+questions.forEach((q, index) => {
+  const div = document.createElement("div");
+  div.classList.add("quiz");
+  div.innerHTML = `
+    <div class="question">${q.question}</div>
+    ${q.options.map(opt => `
+      <label>
+        <input type="radio" name="q${index}" value="${opt}"> ${opt}
+      </label><br>`).join("")}
+  `;
+  container.appendChild(div);
+});
+
+let timeLeft = 60;
+let timerInterval;
+
+function startChallenge() {
+  startBtn.disabled = true;
+  checkBtn.disabled = false;
+  result.style.display = "none";
+  details.style.display = "none";
+  timeLeft = 60;
+  timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timerDiv.textContent = "⏰ انتهى الوقت!";
+      checkBtn.disabled = true;
+      result.style.display = "block";
+      result.textContent = "⏱️ لقد خسرت! انتهى الوقت.";
+      result.className = "result lose";
+    }
+  }, 1000);
+}
+
+function checkAnswers() {
+  if (timeLeft <= 0) return;
+
+  clearInterval(timerInterval);
+  checkBtn.disabled = true;
+
+  let correctCount = 0;
+  let wrongAnswers = [];
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected) {
+      if (selected.value === q.correct) {
+        correctCount++;
+      } else {
+        wrongAnswers.push({
+          number: i + 1,
+          question: q.question,
+          yourAnswer: selected.value,
+          correctAnswer: q.correct
+        });
+      }
+    } else {
+      wrongAnswers.push({
+        number: i + 1,
+        question: q.question,
+        yourAnswer: "لم يتم الإجابة",
+        correctAnswer: q.correct
+      });
+    }
+  });
+
+  result.style.display = "block";
+  details.style.display = "block";
+  details.innerHTML = `
+    <h3>تفاصيل النتائج:</h3>
+    <p>✅ عدد الإجابات الصحيحة: ${correctCount} من ${questions.length}</p>
+    <p>❌ عدد الإجابات الخاطئة أو الفارغة: ${questions.length - correctCount}</p>
+    ${wrongAnswers.length > 0 ? "<hr><h3>أسئلة أخطأت فيها:</h3>" : ""}
+    ${wrongAnswers.map(w =>
+      `<p><strong>س${w.number}:</strong> ${w.question}<br>
+      ❌ إجابتك: ${w.yourAnswer}<br>
+      ✅ الصحيح: ${w.correctAnswer}</p>`
+    ).join("")}
+  `;
+
+  if (correctCount === questions.length) {
+    result.textContent = "🎉 ألف مبروك لقد فزت بجميع الأسئلة!";
+    result.className = "result win";
+  } else {
+    result.textContent = "❌ للأسف، لم تحصل على الدرجة الكاملة.";
+    result.className = "result lose";
+  }
+}
