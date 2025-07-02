@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +6,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+   
     * {
       margin: 0;
       padding: 0;
@@ -45,7 +46,7 @@
       margin-bottom: 10px;
       font-weight: bold;
     }
-    button {
+    .btns {
       display: block;
       margin: 15px auto;
       padding: 10px 20px;
@@ -56,11 +57,11 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    button:disabled {
+    .btns:disabled {
       background-color: #ccc;
       cursor: not-allowed;
     }
-    button:hover:not(:disabled) {
+    .btns:hover:not(:disabled) {
       background-color: #6b7a45;
     }
     .result {
@@ -104,8 +105,166 @@
   </style>
 </head>
 <body dir="rtl">
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+    </div>
+  
+    <button id="menu-toggle" class="menu-icon">&#9776;</button>
+  
+    <ul id="nav-list">
+      <li><a href="index.html#slider"> الرئيسية</a></li>
+      <li><a href="index.html#About"> عن التراث</a></li>
+      <li><a href="index.html#sever"> أنواع التراث    </a></li>
+      
+      <li class="dropdown">
+        <a href="index.html#book">المكتبة الرقمية  </a>
+      </li>
+      
+      <li><a href="index.html#map"> خريطة التراث</a></li>
+      <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+  
+    </ul>
+  
+    <div class="endheader">
+   <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+   <div id="sw">
+    <i class="fa-solid fa-magnifying-glass"></i>
+   </div>
+   <button id="toggle-btn">
+    <i id="icon" class="fa-solid fa-moon"></i>
+  </button>
+  
+    </div>
+    <div class="search-icons" id="search-icons">
+    <form method="GET">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+    <button class="btns"  onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+    </form>
+    </div>
+    </header>
+        <section class="home-heritage">
+          <h1>ألغاز تراثية من الوطن العربي</h1>
+          <div class="Cuntry-heritage">
+            <ul>
+                <li><a href="index.html" class="homeli"> الرئيسيّة /</a></li>
+                <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+                <li><a href="" class="towli">  ألغاز تراثية </a></li>
+            </ul>
+            <p style="color: #eadca8; text-align: center; width: 500px; margin: 10px auto;">مرحبًا بك في تحدي الألغاز التراثية! -->
+                <!-- قبل أن تبدأ مغامرتك في حل الألغاز الممتعة، نود دعوتك لتصفح الموقع والتعرف على التراث المادي لكل دولة من دولنا العربية العريقة. فهذا التراث هو كنز حقيقي يجمع بين حضارات وتقاليد عمرها آلاف السنين، ويعكس حكمة وأسلوب حياة الأجداد.</p> -->
+         <!-- </div>
+       </section> -->
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        <header>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* font-family: "Cairo", sans-serif; */
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f9f6ed;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      text-align: center;
+      color: #b8a352;
+    }
+    h2 {
+      color: #b8a352;
+    }
+    p{
+        margin-top: 20px;
+    }
+    .quiz {
+      margin: 20px;
+      background: #c7bb83;
+      border: 2px solid #b8ab71;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .question {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .btns {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #6b7a45;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btns:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .btns:hover:not(:disabled) {
+      background-color: #6b7a45;
+    }
+    .result {
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      color: white;
+      display: none;
+      border-radius: 8px;
+    }
+    .win {
+      background-color: #4caf50;
+    }
+    .lose {
+      background-color: #b8a352;
+    }
+    .timer {
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+      margin-top: 10px;
+      color: #bbaa66;
+      font-weight: bold;
+    }
+    .details {
+      background-color: #fffde7;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 10px;
+      width: 90%;
+      color: #5d4037;
+    }
+    .details h3 {
+      margin-bottom: 8px;
+      color: #e4d28a;
+    }
+    .details p {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body dir="rtl">
+<header>
   <div class="logo">
     <a href="index.html"><img src="logo.png" alt="الشعار"></a>
   </div>
@@ -113,7 +272,7 @@
   <button id="menu-toggle" class="menu-icon">&#9776;</button>
 
   <ul id="nav-list">
-    <li><a href="index.html#slider"> الرئيسية</a></li>
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
     <li><a href="index.html#About"> عن التراث</a></li>
     <li><a href="index.html#sever"> أنواع التراث    </a></li>
     
@@ -123,7 +282,6 @@
     
     <li><a href="index.html#map"> خريطة التراث</a></li>
     <li><a href="qustion.html">  ألغاز تراثية    </a></li>
-
   </ul>
 
   <div class="endheader">
@@ -131,9 +289,7 @@
  <div id="sw">
   <i class="fa-solid fa-magnifying-glass"></i>
  </div>
- <button id="toggle-btn">
-  <i id="icon" class="fa-solid fa-moon"></i>
-</button>
+
 
   </div>
   <div class="search-icons" id="search-icons">
@@ -144,19 +300,17 @@
   </form>
   </div>
   </header>
-  
-        <section class="home-heritage">
-          <h1>ألغاز تراثية من الوطن العربي</h1>
-          <div class="Cuntry-heritage">
-            <ul>
-                <li><a href="index.html" class="homeli"> الرئيسيّة /</a></li>
-                <li><a href="" class="homeli">التراث الغير مادي /</a></li>
-                <li><a href="" class="towli">  ألغاز تراثية </a></li>
-            </ul>
-            <!-- <p style="color: #eadca8; text-align: center; width: 500px; margin: 10px auto;">مرحبًا بك في تحدي الألغاز التراثية! -->
-                <!-- قبل أن تبدأ مغامرتك في حل الألغاز الممتعة، نود دعوتك لتصفح الموقع والتعرف على التراث المادي لكل دولة من دولنا العربية العريقة. فهذا التراث هو كنز حقيقي يجمع بين حضارات وتقاليد عمرها آلاف السنين، ويعكس حكمة وأسلوب حياة الأجداد.</p> -->
-         </div>
-       </section>
+  <section class="home-book">
+     <h1>ألغاز تراثية من الوطن العربي</h1>
+     <div class="Cuntry-heritage">
+      <ul>
+          <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+          <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+          <li><a href="" class="towli">    ألغاز تراثية    </a></li>
+      </ul>
+   </div>
+  </section>
+ 
        <div class="About-past" id="About-past" style="margin: 30px 50px;">
         <div class="text" style="display: flex;align-items: center;">
             <div class="circle"></div>
@@ -255,10 +409,10 @@
   <h1>ألغاز تراثية من الوطن العربي</h1>
   <div class="timer" id="timer">يجب أن تضغط على "ابدأ التحدي" لبدء التحدي ⏳</div>
 
-  <button id="startBtn" onclick="startChallenge()">ابدأ التحدي</button>
+  <button class="btns" id="startBtn" onclick="startChallenge()">ابدأ التحدي</button>
   <div id="questions"></div>
 
-  <button id="checkBtn" onclick="checkAnswers()" disabled>تحقق من الإجابات</button>
+  <button  class="btns" id="checkBtn" onclick="checkAnswers()" disabled>تحقق من الإجابات</button>
 
   <div class="result" id="result"></div>
   <div class="details" id="details" style="display:none;"></div>
@@ -307,116 +461,7 @@
  <div class="last-coun">
    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
   </div>
-  <script>
-    const questions = [
-      { question: "1. ما المقصود بالتراث غير المادي؟", options: ["المباني التاريخية", "العادات والتقاليد والمهارات المتوارثة", "القطع الأثرية"], correct: "العادات والتقاليد والمهارات المتوارثة" },
-      { question: "2. أي من التالي يُعد من أمثلة التراث غير المادي؟", options: ["الأسواق القديمة", " الأدوات الحجرية", "لرقصات الشعبية"], correct: "لرقصات الشعبية" },
-      { question: "3. أين يُحفظ التراث غير المادي غالبًا؟", options: ["في المتاحف فقط", "في عقول الناس وممارساتهم", "في الأسواق"], correct: "في عقول الناس وممارساتهم" },
-      { question: "4.ما أهمية الحفاظ على التراث غير المادي؟", options: ["لأنه يشكل جزءًا من هوية المجتمع وثقافته", "  لأنه نوع من التسلية", " لأنه مفيد في البناء فقط"], correct: "لأنه يشكل جزءًا من هوية المجتمع وثقافته " },
-      { question: "5.من أنواع التراث غير المادي:", options: ["لعملات الفضية ", "لأبراج والمباني", "الشعر الشعبي والحداء"], correct: "الشعر الشعبي والحداء" },
-      { question: "6. كيف يمكن أن نُسهم في حفظ التراث غير المادي؟ ", options: ["بعدم نقله للآخرين", "بتوثيقه وممارسته وتعليمه", "تجاهله وتركه"], correct: "بتوثيقه وممارسته وتعليمه" },
-    ];
-
-    const container = document.getElementById("questions");
-    const startBtn = document.getElementById("startBtn");
-    const checkBtn = document.getElementById("checkBtn");
-    const timerDiv = document.getElementById("timer");
-    const result = document.getElementById("result");
-    const details = document.getElementById("details");
-
-    questions.forEach((q, index) => {
-      const div = document.createElement("div");
-      div.classList.add("quiz");
-      div.innerHTML = `
-        <div class="question">${q.question}</div>
-        ${q.options.map(opt => `
-          <label>
-            <input type="radio" name="q${index}" value="${opt}"> ${opt}
-          </label><br>`).join("")}
-      `;
-      container.appendChild(div);
-    });
-
-    let timeLeft = 60;
-    let timerInterval;
-
-    function startChallenge() {
-      startBtn.disabled = true;
-      checkBtn.disabled = false;
-      result.style.display = "none";
-      details.style.display = "none";
-      timeLeft = 60;
-      timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
-
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-          timerDiv.textContent = "⏰ انتهى الوقت!";
-          checkBtn.disabled = true;
-          result.style.display = "block";
-          result.textContent = "⏱️ لقد خسرت! انتهى الوقت.";
-          result.className = "result lose";
-        }
-      }, 1000);
-    }
-
-    function checkAnswers() {
-      if (timeLeft <= 0) return;
-
-      clearInterval(timerInterval);
-      checkBtn.disabled = true;
-
-      let correctCount = 0;
-      let wrongAnswers = [];
-
-      questions.forEach((q, i) => {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selected) {
-          if (selected.value === q.correct) {
-            correctCount++;
-          } else {
-            wrongAnswers.push({
-              number: i + 1,
-              question: q.question,
-              yourAnswer: selected.value,
-              correctAnswer: q.correct
-            });
-          }
-        } else {
-          wrongAnswers.push({
-            number: i + 1,
-            question: q.question,
-            yourAnswer: "لم يتم الإجابة",
-            correctAnswer: q.correct
-          });
-        }
-      });
-
-      result.style.display = "block";
-      details.style.display = "block";
-      details.innerHTML = `
-        <h3>تفاصيل النتائج:</h3>
-        <p>✅ عدد الإجابات الصحيحة: ${correctCount} من ${questions.length}</p>
-        <p>❌ عدد الإجابات الخاطئة أو الفارغة: ${questions.length - correctCount}</p>
-        ${wrongAnswers.length > 0 ? "<hr><h3>أسئلة أخطأت فيها:</h3>" : ""}
-        ${wrongAnswers.map(w =>
-          `<p><strong>س${w.number}:</strong> ${w.question}<br>
-          ❌ إجابتك: ${w.yourAnswer}<br>
-          ✅ الصحيح: ${w.correctAnswer}</p>`
-        ).join("")}
-      `;
-
-      if (correctCount === questions.length) {
-        result.textContent = "🎉 ألف مبروك لقد فزت بجميع الأسئلة!";
-        result.className = "result win";
-      } else {
-        result.textContent = "❌ للأسف، لم تحصل على الدرجة الكاملة.";
-        result.className = "result lose";
-      }
-    }
-  </script>
+ 
    <script src="main.js"></script>
 
 </body>
