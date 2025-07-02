@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+  <section class="home-heritage">
+    <h1>عن  التراث الثقافي الغير مادي</h1>
+    <div class="Cuntry-heritage">
+      <ul>
+          <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+          <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+          <li><a href="" class="towli">  عن التراث </a></li>
+      </ul>
+   </div>
+ </section>
+<div class="all-con">
+
+    <div class="cont-right">
+
+    </div>
+    <div class="cont-left">
+      
+      <img class="main-img-co" src="https://i.ibb.co/fYKj2m7S/ba2.png" alt="" srcset="">
+    
+         <div class="About-her-co">
+        <div class="About-past" id="About-past">
+    <div class="text" style="display: flex;align-items: center;">
+        <div class="circle"></div>
+        <h2>  من هنا بدأت الحكاية <span>(التراث غير المادي)</span></h2>
+        <img src="product1.png" class="img-h"  style="margin-right: 5px; width: 30px;"  alt="" srcset="">
+      </div>
+      <p>
+        يشكل التراث الثقافي غير المادي -رغم عامل الهشاشة- ركيزة مهمة في الحفاظ على التنوع والتراث الثقافي في عصر العولمة المتزايدة، ففي فهم التراث الثقافي غير المادي للمجتمعات المحلية المختلفة يساعد على الحوار بين الثقافات ويشجع على الاحترام المتبادل لطريقة عيش الآخر.
+
+        ويعتبر الحفاظ على التراث غير المادي هو حماية الهويات الثقافية، وبالتالي التنوع الثقافي للبشرية. ويشمل التراث غير المادي على سبيل المثال لا الحصر المهرجانات التقليدية والتقاليد الشفهية والملاحم، والعادات، وأساليب المعيشة، والحرف التقليدية، وما إلى ذلك.
+        يشملُ التراث الثقافي غير المادي الممارسات والمعارف وأشكال التعبير التي تُقرّ المجتمعات المحلية بمكانتها المحورية في بنية هويتها الثقافية، جنباً إلى جنب مع كل ما يرتبط بها من عناصر وأماكن. تتناقل الأجيال هذا التراث الذي يتكيّف مع مرور الزمن، وهو ما يعزز الهوية ويكرّس احترام التنوع الثقافي.
+      </p>
+      <p style="font-weight: bolder; margin-bottom: 15px;">يتجلى “التراث الثقافي غير المادي” بصفة خاصة في المجالات التالية:</p>
+      <ul class="kind-h">
+       <li>   التقاليد وأشكال التعبير الشفهي، بما في ذلك اللغة كواسطة للتعبير عن التراث الثقافي غير المادي.  </li>
+       <li> فنون وتقاليد أداء العروض. </li>
+       <li> الممارسات الاجتماعية والطقوس والاحتفالات.</li>
+       <li> المعارف والممارسات المتعلقة بالطبيعة والكون. </li>
+       <li> المهارات المرتبطة بالفنون الحرفية التقليدية. </li>
+      </ul>
+
+<div class="containeres">
+
+  <div class="gallery-container w-3 h-2">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/fYKj2m7S/ba2.png" alt="nature">
+      </div>
+      <div class="text"> الفلكور الشعبي</div>
+    </div>
+  </div>
+
+  <div class="gallery-container w-3 h-3">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/N6xY9HcG/ba3.jpg" alt="people">
+      </div>
+      <div class="text">الحكايات والسير الشعبية</div>
+    </div>
+  </div>
+
+  <div class="gallery-container h-2">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/s9ZYPr9d/ba4.jpg" alt="sport">
+      </div>
+      <div class="text">الأقوال والأمثال</div>
+    </div>
+  </div>
+
+  <div class="gallery-container w-2">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/cSm1FmG0/ba7.jpg" alt="fitness">
+      </div>
+      <div class="text">فنون وتقاليد أداء العروض</div>
+    </div>
+  </div>
+
+  <div class="gallery-container w-4 h-1">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/ycS8pkhN/ba5.jpg" alt="food">
+      </div>
+      <div class="text">العادات والتقاليد</div>
+    </div>
+  </div>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <div class="image">
+        <img src="https://i.ibb.co/qMR9z1dB/ba6.jpg" alt="travel">
+      </div>
+      <div class="text"> المعارف والممارسات المتعلقة بالطبيعة والكون.</div>
+    </div>
+  </div>
+
+
+</div>
+        </div>
+        <div class="past" id="past">
+    <div class="text" style="display: flex;align-items: center;">
+        <div class="circle"></div>
+        <h2>  وش يقول ماضينا   <span>(التراث غير المادي)</span></h2>
+        <img src="product1.png"  style="margin-right: 5px; width: 30px;"  alt="" srcset="">
+      </div>
+      <p>
+        التراث الغير مادي يُمثل الروح الحية للمجتمعات، ويعكس القيم والمعتقدات التي تشكل هوية الشعوب. من خلال الحفاظ على هذا التراث وتعزيزه، يمكن للأمم أن تضمن استمرار تقاليدها الثقافية، وتعزز من مكانتها على الساحة الثقافية العالمية. إن حماية التراث الغير مادي ليس مجرد واجب وطني، بل هو مسؤولية جماعية تتطلب التعاون بين الحكومات، المنظمات الدولية، والمجتمعات المحلية. من خلال تضافر الجهود واستخدام التقنيات الحديثة، يمكننا أن نحافظ على هذا التراث الثري ونضمن انتقاله بأمان إلى الأجيال القادمة.
+        مع التحديات المستمرة والتغيرات الاجتماعية والاقتصادية، يبقى مستقبل التراث الغير مادي مرهونًا بمدى فعالية الجهود المبذولة للحفاظ عليه. يُتوقع أن تستمر الحكومات والمنظمات الدولية في تعزيز التعاون لحماية هذا التراث، مع التركيز على استخدام التقنيات الحديثة في التوثيق والرقمنة. كما سيكون تعزيز الوعي الثقافي بين الشباب والأجيال القادمة أمرًا حاسمًا لضمان استمرارية التراث الغير مادي كجزء لا يتجزأ من الهوية الثقافية للأمم.
+    
+        يُعتبر التراث الغير مادي جزءًا حيويًا من الهوية الثقافية للشعوب، إذ يشمل العادات، التقاليد، الفنون الشعبية، والممارسات الثقافية التي تنتقل عبر الأجيال. بعكس التراث المادي الذي يتمثل في المعالم والمباني، فإن التراث الغير مادي يتمحور حول القيم والمعارف المتوارثة التي تعكس روح المجتمع وهويته. مع تزايد العولمة والتغيرات الاجتماعية، تبرز أهمية الحفاظ على هذا التراث لضمان استمرارية الهوية الثقافية وتعزيز الانتماء بين الأجيال. في هذا المقال، سنتناول بالتفصيل مفهوم التراث الغير مادي، أهميته، التحديات التي يواجهها، والجهود المبذولة لحمايته.
+      </p>
+        </div>
+        <div class="example-pass" style="margin-top: 50px;">
+          <div class="text" style="display: flex;align-items: center;justify-content: center;" >
+            <!-- <div class="circle"></div> -->
+            <h2> أنواع التراث الثقافي غير المادي</h2>
+          </div>
+        <!-- <p style="text-align: center;  width:500px;margin:auto; margin-top: 5px;">التراث الثقافي غير المادي هو ذلك الجزء من الثقافة الذي لا يمكن لمسه، لكنه يُمارس ويُعاش وينتقل من جيل إلى آخر. حسب تعريف اليونسكو، يشمل هذا التراث العادات والتقاليد والمهارات والمعارف التي تعبّر عن الهوية الثقافية للمجتمعات.</p> -->
+             <div class="k-in">
+              <div class="boxs">
+                <div class="box">
+                  <img src="https://i.ibb.co/s9ZYPr9d/ba4.jpg" alt="" srcset="">
+                  <div class="text">
+                    <h3 >التقاليد وأشكال التعبير الشفهي</h3>
+                    <p>تشمل القصص الشعبية، الأمثال، الشعر، الأغاني، والأساطير التي تُنقل شفهياً من جيل لآخر. هذا النوع من التراث يُستخدم لحفظ التاريخ والقيم وتعليم الأجيال الجديدة بأسلوب بسيط وممتع. يعكس هوية المجتمع وفهمه للحياة.. كما أن الحكايات الشفهية غالباً ما تُروى للأطفال لتعليمهم الأخلاق والحكمة بطريقة ممتعة، مما يجعلها جزءاً من التربية والتواصل العاطفي بين الأجيال.</p>
+                     <!-- <a href=""class="btn white">إقرأ المزيد</a> -->
+                  </div>
+                </div>
+                <div class="box">
+                  <img src="https://i.ibb.co/rK87BVLT/server-1.jpg" alt="" srcset="">
+                  <div class="text">
+                    <h3>لممارسات الاجتماعية والطقوس والاحتفالات.</h3>
+                    <p>هي العادات والأنشطة الجماعية التي تُمارس في المجتمع في مناسبات مختلفة، مثل الأعياد، الأعراس، الطقوس الدينية، أو حتى مراسم الولادة والوفاة. هذه الممارسات تُعدّ من أهم مظاهر الترابط الاجتماعي، حيث يتشارك الناس مشاعر الفرح أو الحزن ويؤدون طقوساً تعزز هويتهم الثقافية. وغالباً ما تكون هذه العادات مصحوبة بطقوس خاصة   </p>
+                    <!-- <a href=""class="btn brown">إقرأ المزيد</a> -->
+                 
+                  </div>
+                </div>
+                <div class="box">
+                  <img src="https://i.ibb.co/fYKj2m7S/ba2.png" alt="" srcset="">
+                  <div class="text">
+                    <h3>فنون وتقاليد أداء العروض.</h3>
+                    <p>  الفنون التي تُؤدى أمام جمهور وتعبر عن مشاعر وهوية الجماعة مثل الموسيقى والرقص والمسرح التقليدي. هذه الفنون لا تكون فقط وسيلة ترفيه، بل هي تعبير حيّ عن قيم المجتمع وتاريخه. على سبيل المثال، الرقصات الشعبية تحمل في حركاتها رموزاً لمعارك قديمة أو طقوس زراعية، والموسيقى التقليدية تُستخدم في الأفراح والأحزان لتعبر عن مشاعر الناس.</p>
+                    <!-- <a href=""class="btn brown">إقرأ المزيد</a> -->
+                  </div>
+                </div>
+            
+                <div class="box">
+                  <img src="https://i.ibb.co/cSm1FmG0/ba7.jpg" alt="" srcset="">
+                  <div class="text">
+                    <h3>المعارف والممارسات المتعلقة بالطبيعة والكون.</h3>
+                    <p>هذا النوع من التراث يشمل المعرفة التقليدية التي اكتسبها الإنسان من خلال مراقبته للطبيعة وتفاعله معها عبر أجيال. من ذلك مثلاً، معرفة مواسم الزراعة، أوقات الأمطار، استخدام النباتات الطبية، أو تحديد المواسم عن طريق النجوم. هذه المعارف لا تُدرس في المدارس بل تُورّث عبر التجربة والتعلم المباشر من الآباء والأجداد. </p>
+                     <!-- <a href=""class="btn white">إقرأ المزيد</a> -->
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+         </div>
+    </div>
+</div>
+
+<div class="logos">
+  <h1 class="lo-te">المراجع </h1>
+      <div class="logos-slide">
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+      </div>
+      <div class="logos-slide none">
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+      </div>
+      <div class="logos-slide none">
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+      </div>
+      <div class="logos-slide none">
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+        <img src="https://i.ibb.co/KjnzH5VW/logo-1.png" />
+        <img src="https://i.ibb.co/n8B60qFR/logo-2.png" />
+        <img src="https://i.ibb.co/KjDPDtkR/logo-3.png" />
+        <img src="https://i.ibb.co/7dXykHtm/logo-4.png" />
+      </div>
+    </div>
+
+
+<footer class="footer" id="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 		<a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+  	 			<ul>
+  	 			<p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+          <h4>   أقسام الموقع: </h4>
+          <ul>
+            <li><a href="index.html"> الصفحة الرئيسية</a></li>
+            <li><a href="heritage.html"> عن التراث</a></li>
+            <li><a href="book.html"> المكتبة الرقمية </a></li>
+            <li><a href="index.html#map">  خريطه التراث</a></li>  	
+            <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+             </ul>
+        </div>
+  	 		<div class="footer-col">
+  	 			<h4>روابط الموقع: </h4>
+  	 			<ul>
+  	 				<li><a href="index.html#slider">الرئيسية</a></li>
+  	 				<li><a href="index.html#About">عن التراث</a></li>
+  	 				<li><a href="index.html#sever">المعرض</a></li>
+  	 				<li><a href="index.html#book">المكتبة</a></li>
+  	 				<li><a href="index.html#map">خريطة التراث</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>تابعنا على: </h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+    
+  </footer>
+  <div class="last-coun">
+    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>
