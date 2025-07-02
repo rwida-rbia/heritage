@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+  <section class="home-book">
+     <h1>مكتبه  التراث الثقافي الغير مادي</h1>
+     <div class="Cuntry-heritage">
+      <ul>
+          <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+          <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+          <li><a href="" class="towli">   مكتبه التراث </a></li>
+      </ul>
+   </div>
+  </section>
+ 
+
+
+
+    <div class="container" style="  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top:50px;">
+   
+
+   <article class="card__article">
+    <img src="https://i.ibb.co/F4nGTckh/coverbook-2.png" alt="image" class="card__img">
+
+    <div class="card__data">
+       <h3 class="card__title">قصص العرب القديم</h3>
+       <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+       <a href="book-1.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+    <a href="book-1.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+ <article class="card__article">
+  <img src="https://i.ibb.co/cKCz29Gt/coverbook-1.png" alt="image" class="card__img">
+
+    <div class="card__data">
+      <h3 class="card__title">تاريخ التراث العربي </h3>
+      <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+      <a href="book-2.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+
+   
+    <a href="book-2.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+ <article class="card__article">
+  <img src="https://i.ibb.co/2TRcT7Z/coverbook-3.png" alt="image" class="card__img">
+
+    <div class="card__data">
+      <h3 class="card__title">  القهوة العربية </h3>
+      <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+      <a href="book-3.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+
+    <a href="book-3.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+ <article class="card__article">
+  <img src="https://i.ibb.co/nqLK9fz5/coverbook-4.png" alt="image" class="card__img">
+
+    <div class="card__data">
+      <h3 class="card__title">   التراث بين السابق واللاحق </h3>
+      <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+      <a href="book-4.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+
+    <a href="book-4.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+
+
+<article class="card__article">
+  <img src="https://i.ibb.co/B58Csxbv/coverbook-6.png" alt="image" class="card__img">
+
+    <div class="card__data">
+      <h3 class="card__title">   التراث  العرب في الاسلام </h3>
+      <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+      <a href="book-6.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+
+    <a href="book-6.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+ <article class="card__article">
+  <img src="https://i.ibb.co/PZpsC0jF/coverbook-7.png" alt="image" class="card__img">
+
+    <div class="card__data">
+      <h3 class="card__title">  حماية التراث الثقافي</h3>
+      <p>ينعكس التراث في كافة التقاليد الموروثة الخاصة بنمط الحياة الاجتماعية، وثقافة الطعام، والزواج، والطقوس الدينية، والحرف اليدوية، والفنون الشعبية،</p>
+      <a href="book-7.pdf" class="card__price">تحميل الان</a>
+    </div>
+
+
+    <a href="book-7.pdf" class="card__button">
+      تحميل الان<i class="ri-arrow-right-line"></i>
+    </a>
+ </article>
+
+
+
+
+</div>
+
+     
+     
+   </div>
+   </div>
+
+
+
+   <footer class="footer" id="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 		<a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+  	 			<ul>
+  	 			<p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+          <h4>   أقسام الموقع: </h4>
+          <ul>
+            <li><a href="index.html"> الصفحة الرئيسية</a></li>
+            <li><a href="heritage.html"> عن التراث</a></li>
+            <li><a href="book.html"> المكتبة الرقمية </a></li>
+            <li><a href="index.html#map">  خريطه التراث</a></li>  	
+            <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+             </ul>
+        </div>
+  	 		<div class="footer-col">
+  	 			<h4>روابط الموقع: </h4>
+  	 			<ul>
+  	 				<li><a href="index.html#slider">الرئيسية</a></li>
+  	 				<li><a href="index.html#About">عن التراث</a></li>
+  	 				<li><a href="index.html#sever">المعرض</a></li>
+  	 				<li><a href="index.html#book">المكتبة</a></li>
+  	 				<li><a href="index.html#map">خريطة التراث</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>تابعنا على: </h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+    
+  </footer>
+  <div class="last-coun">
+    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+   </div>
+   <script src="main.js"></script>
