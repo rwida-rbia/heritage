@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body dir="rtl">
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+  <section class="Cuntry-Home">
+    <img class="mine" src="" alt="" srcset="">
+    <div class="ba-cun fa">
+      <ul>
+        <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+        <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+        <li><a href="" class="towli">  التراث الفلسطيني  </a></li>
+    </ul>
+    </div>
+
+   <div class="text-one">
+   <div class="border">
+    <h2 style="padding-right: 30px;font-weight: 500;">نبذة  عن التراث الفلسطيني</h2>
+    <div class="dis">
+      <h3>تــراثــنـــا دلـــــيل هويتنا </h3>
+      <p>يشمل التراث غير المادي حسب تعريف اليونسكو لتقاليد أو أشكال التعبير الحية الموروثة من أسلافنا والتي ستنقل إلى أحفادنا، مثل التقاليد الشفهية، وفنون الأداء، والممارسات الاجتماعية، والطقوس، والمناسبات الاحتفالية، والمعارف والممارسات المتعلقة بالطبيعة والكون، أو المعارف والمهارات المرتبطة بإنتاج الصناعات الحرفية التقليدية. ويشكل التراث الثقافي غير المادي، بالرغم من طابعه الهش، عاملاً مهماً في الحفاظ على التنوع الثقافي في مواجهة العولمة المتزايدة. ففهم التراث الثقافي غير المادي للجماعات المختلفة يساعد على الحوار بين الثقافات ويشجع على الاحترام المتبادل لطريقة عيش الآخر. ولا تكمن أهمية التراث الثقافي غير المادي في مظهره الثقافي بحد ذاته وإنما في المعارف والمهارات الغنية التي تنقل عبره من جيل إلى آخر. والقيمة الاجتماعية والاقتصادية التي ينطوي عليها هذا النقل للمعارف تهم الأقليات مثلما تهم الكتل الاجتماعية الكبيرة، وتهم البلدان النامية مثلما تهم البلدان المتقدمة.</p>
+    </div>
+   </div>
+   <div class="all-co">
+    <div class="mnue-co">
+    <a href=""><p>نبذة</p></a>
+     <a href=""><p">العيالة</p></a>
+     <a href=""><p>العازي</p></a>
+     <a href=""><p>المجلس</p></a>
+     <a href=""><p>الرزفة</p></a>
+     <a href=""><p>الأداء</p></a>
+     <a href=""><p">الصقارة</p></a>
+    </div>
+    <div class="co-te">
+ 
+      <h2>فن الخط العربي: المعارف والمهارات والممارسات </h2>
+      <img src="https://i.ibb.co/ZR2qMW2G/f-5.jpg" alt="" srcset="">
+      <p>
+    	الممارسة الفنية لكتابة الحروف والكلمات العربية لإظهار عظمتها وجمالها.
+    </p>
+      
+      <h2>النخيل: المعارف والمهارات والتقاليد والممارسات </h2>
+      <img src="https://i.ibb.co/HDZbQVGF/f-4.jpg" alt="" srcset="">
+      <p>
+      هناك تاريخ طويل لزراعة نخيل التمر واستخدامه في المنطقة، مما أدى إلى تطوير الحرف التقليدية والممارسات الاجتماعية. </p>
+    
+       <h2>	ممارسة صناعة الصابون النابلسي</h2>
+      <img src="https://i.ibb.co/VWm2tZkC/f-3.jpg" alt="" srcset="">
+      <p>
+      يُصنع هذا الصابون القشتالي من زيت الزيتون، وهو صابون تقليدي تصنعه النساء، ويُصنع في نابلس منذ القرن الرابع عشر. بلغت صناعته ذروتها في القرن التاسع عشر، ثم تراجعت في منتصف القرن العشرين. </p>
+     
+      <h2>  فن التطريز الفلسطيني: الممارسات والمهارات والمعارف والتقاليد</h2>
+      
+      <p>
+      التطريز التقليدي المستخدم لتزيين الملابس وخاصة النسائية. ويشمل الزخارف كالطيور والأشجار والزهور، وتعكس التصاميم الهويات الإقليمية. </p>
+      
+      <h2> الدبكة: الرقص التقليدي في فلسطين</h2>
+
+      <p>
+      رقصة ريفية يؤديها رجال ونساء يتحركون معاً في خط واحد، وقد أصبحت رمزاً للمقاومة.
+      </p>
+  
+    </div>
+   </div>
+  </div>
+  </section>
+
+
+  <footer class="footer" id="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 		<a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+  	 			<ul>
+  	 			<p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+          <h4>   أقسام الموقع: </h4>
+          <ul>
+            <li><a href="index.html"> الصفحة الرئيسية</a></li>
+            <li><a href="heritage.html"> عن التراث</a></li>
+            <li><a href="book.html"> المكتبة الرقمية </a></li>
+            <li><a href="index.html#map">  خريطه التراث</a></li>  	 	
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+
+             </ul>
+        </div>
+  	 		<div class="footer-col">
+  	 			<h4>روابط الموقع: </h4>
+  	 			<ul>
+  	 				<li><a href="index.html#slider">الرئيسية</a></li>
+  	 				<li><a href="index.html#About">عن التراث</a></li>
+  	 				<li><a href="index.html#sever">المعرض</a></li>
+  	 				<li><a href="index.html#book">المكتبة</a></li>
+  	 				<li><a href="index.html#map">خريطة التراث</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>تابعنا على: </h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+    
+  </footer>
+  <div class="last-coun">
+    <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>

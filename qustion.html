@@ -1,0 +1,579 @@
+<!-- <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>ألغاز تراثية عربية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* font-family: "Cairo", sans-serif; */
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f9f6ed;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      text-align: center;
+      color: #b8a352;
+    }
+    h2 {
+      color: #b8a352;
+    }
+    p{
+        margin-top: 20px;
+    }
+    .quiz {
+      margin: 20px;
+      background: #c7bb83;
+      border: 2px solid #b8ab71;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .question {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .btns {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #6b7a45;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btns:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .btns:hover:not(:disabled) {
+      background-color: #6b7a45;
+    }
+    .result {
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      color: white;
+      display: none;
+      border-radius: 8px;
+    }
+    .win {
+      background-color: #4caf50;
+    }
+    .lose {
+      background-color: #b8a352;
+    }
+    .timer {
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+      margin-top: 10px;
+      color: #bbaa66;
+      font-weight: bold;
+    }
+    .details {
+      background-color: #fffde7;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 10px;
+      width: 90%;
+      color: #5d4037;
+    }
+    .details h3 {
+      margin-bottom: 8px;
+      color: #e4d28a;
+    }
+    .details p {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body dir="rtl">
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+    </div>
+  
+    <button id="menu-toggle" class="menu-icon">&#9776;</button>
+  
+    <ul id="nav-list">
+      <li><a href="index.html#slider"> الرئيسية</a></li>
+      <li><a href="index.html#About"> عن التراث</a></li>
+      <li><a href="index.html#sever"> أنواع التراث    </a></li>
+      
+      <li class="dropdown">
+        <a href="index.html#book">المكتبة الرقمية  </a>
+      </li>
+      
+      <li><a href="index.html#map"> خريطة التراث</a></li>
+      <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+  
+    </ul>
+  
+    <div class="endheader">
+   <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+   <div id="sw">
+    <i class="fa-solid fa-magnifying-glass"></i>
+   </div>
+   <button id="toggle-btn">
+    <i id="icon" class="fa-solid fa-moon"></i>
+  </button>
+  
+    </div>
+    <div class="search-icons" id="search-icons">
+    <form method="GET">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+    <button class="btns"  onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+    </form>
+    </div>
+    </header>
+        <section class="home-heritage">
+          <h1>ألغاز تراثية من الوطن العربي</h1>
+          <div class="Cuntry-heritage">
+            <ul>
+                <li><a href="index.html" class="homeli"> الرئيسيّة /</a></li>
+                <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+                <li><a href="" class="towli">  ألغاز تراثية </a></li>
+            </ul>
+            <p style="color: #eadca8; text-align: center; width: 500px; margin: 10px auto;">مرحبًا بك في تحدي الألغاز التراثية! -->
+                <!-- قبل أن تبدأ مغامرتك في حل الألغاز الممتعة، نود دعوتك لتصفح الموقع والتعرف على التراث المادي لكل دولة من دولنا العربية العريقة. فهذا التراث هو كنز حقيقي يجمع بين حضارات وتقاليد عمرها آلاف السنين، ويعكس حكمة وأسلوب حياة الأجداد.</p> -->
+         <!-- </div>
+       </section> -->
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التراث العربي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* font-family: "Cairo", sans-serif; */
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #f9f6ed;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      text-align: center;
+      color: #b8a352;
+    }
+    h2 {
+      color: #b8a352;
+    }
+    p{
+        margin-top: 20px;
+    }
+    .quiz {
+      margin: 20px;
+      background: #c7bb83;
+      border: 2px solid #b8ab71;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .question {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .btns {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #6b7a45;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btns:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .btns:hover:not(:disabled) {
+      background-color: #6b7a45;
+    }
+    .result {
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      color: white;
+      display: none;
+      border-radius: 8px;
+    }
+    .win {
+      background-color: #4caf50;
+    }
+    .lose {
+      background-color: #b8a352;
+    }
+    .timer {
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+      margin-top: 10px;
+      color: #bbaa66;
+      font-weight: bold;
+    }
+    .details {
+      background-color: #fffde7;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 10px;
+      width: 90%;
+      color: #5d4037;
+    }
+    .details h3 {
+      margin-bottom: 8px;
+      color: #e4d28a;
+    }
+    .details p {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body dir="rtl">
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="الشعار"></a>
+  </div>
+
+  <button id="menu-toggle" class="menu-icon">&#9776;</button>
+
+  <ul id="nav-list">
+    <li><a href="index.html#slider">الصفحة الرئيسية</a></li>
+    <li><a href="index.html#About"> عن التراث</a></li>
+    <li><a href="index.html#sever"> أنواع التراث    </a></li>
+    
+    <li class="dropdown">
+      <a href="index.html#book">المكتبة الرقمية  </a>
+    </li>
+    
+    <li><a href="index.html#map"> خريطة التراث</a></li>
+    <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+  </ul>
+
+  <div class="endheader">
+ <a href="heritage.html"> <button class="btn brown">  ابدأ رحلتك</button></a>  
+ <div id="sw">
+  <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+
+
+  </div>
+  <div class="search-icons" id="search-icons">
+  <form method="GET">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="countryName" placeholder=" اكتب اسم الدولة العربية مثل: الكويت.." />
+  <butto onclick="goToCountry()" class="btn" style="color: #b8a352;">أنطلق</button>
+  </form>
+  </div>
+  </header>
+  <section class="home-book">
+     <h1>ألغاز تراثية من الوطن العربي</h1>
+     <div class="Cuntry-heritage">
+      <ul>
+          <li><a href="" class="homeli"> الرئيسيّة /</a></li>
+          <li><a href="" class="homeli">التراث الغير مادي /</a></li>
+          <li><a href="" class="towli">    ألغاز تراثية    </a></li>
+      </ul>
+   </div>
+  </section>
+ 
+       <div class="About-past" id="About-past" style="margin: 30px 50px;">
+        <div class="text" style="display: flex;align-items: center;">
+            <div class="circle"></div>
+            <h2> هدف لعب الألغاز التراثية</h2>
+            <img src="product1.png" class="img-h"  style="margin-right: 5px; width: 30px;"  alt="" srcset="">
+          </div>
+          <p style="color: #4f4f45;">
+            لعب الألغاز التراثية ليس مجرد ترفيه أو تسلية، بل هو جسر يصلنا بماضينا العريق ويحافظ على هويتنا الثقافية. هذه الألغاز التي توارثها الأجداد عبر الأجيال تحمل في طياتها حكمة عميقة وفهمًا للحياة والبيئة المحيطة، ولذلك فإن الممارسة المستمرة لها تساهم في حفظ هذا الإرث الثمين من الاندثار.
+
+            من الناحية الفكرية، تُعتبر الألغاز التراثية وسيلة فعالة لتنمية مهارات العقل. فهي تتطلب التفكير العميق، وربط المعلومات، وتحليل المعطيات، مما يحسن قدرات حل المشكلات ويزيد من التركيز والذاكرة. كما أن محاولة فهم اللغز وإيجاد الحل المناسب تعزز من قدرة الفرد على التفكير النقدي والابتكار.
+            
+            أما من الناحية الاجتماعية، فإن لعب الألغاز التراثية يعزز التواصل بين الأفراد، حيث غالبًا ما تُمارس هذه الألعاب في جلسات عائلية أو بين الأصدقاء، مما يزيد من روح التعاون والتفاعل. يخلق هذا الجو من المرح والتحدي فرصة لتقوية العلاقات وبناء صداقات جديدة، كما ينمي مهارات الحوار والاستماع.
+            
+            علاوة على ذلك، فإن الألغاز التراثية تمثل وسيلة تعليمية غير مباشرة. فهي تعلم القيم، والمعلومات الثقافية، وحتى بعض الحكم الحياتية، بطريقة محببة وممتعة. هذا الأسلوب يجعل التعلم أكثر سهولة واستمرارية، خاصة لدى الأطفال والشباب، حيث يحفز لديهم حب المعرفة والاستكشاف.
+            
+            لا يمكن أيضًا إغفال الدور الذي تلعبه الألغاز في تطوير اللغة والبلاغة، فهي تتيح فرصة لتعزيز المفردات وتعلم عبارات جديدة، بالإضافة إلى تحسين القدرة على التعبير والتواصل بطريقة أدبية وأنيقة.
+            
+            علاوة على ذلك، فإن الاستمرار في حل الألغاز يعلم الفرد الصبر والمثابرة، إذ لا يكون الحل دائمًا سهلاً أو مباشرًا، مما يدفع اللاعبين لتطوير مهارات التركيز وعدم الاستسلام بسرعة، وهي صفات مهمة في الحياة اليومية.
+            
+            وفي النهاية، تلعب الألغاز التراثية دورًا كبيرًا في تعزيز الهوية والانتماء، حيث يشعر اللاعب بالفخر بما يمتلكه من تراث وثقافة تميز مجتمعه عن غيره، ويزداد ارتباطه بجذوره وتقاليده.
+            
+            لذلك، فإن اللعب بالألغاز التراثية ليس فقط وسيلة للترفيه، بل هو استثمار في العقل، وتعزيز للهوية، وتقوية للعلاقات الاجتماعية، وحفظ للتراث الثقافي للأجيال القادمة.
+          </p>
+          <p style="font-weight: bolder; margin-bottom: 15px;">قواعد لعب الألغاز التراثية “التراث الثقافي غير المادي” بصفة خاصة   :</p>
+          <ul class="kind-h">
+           <li>   قبل البدء، تصفح الموقع وتعرف على التراث المادي لكل دولة وأهميته.  </li>
+           <li> يجب أن تكون الإجابة واضحة ومباشرة قبل انتهاء الوقت. </li>
+           <li> إذا كانت الإجابة صحيحة، يحصل اللاعب أو الفريق على نقطة.</li>
+           <li> في نهاية اللعبة، يُعلن الفائز من يملك أكبر عدد نقاط.</li>
+           <li> الهدف الأساسي هو التعلم والاستمتاع بالحفاظ على التراث. </li>
+          </ul>
+    
+    <!-- <div class="containeres">
+    
+      <div class="gallery-container w-3 h-2">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba2.png" alt="nature">
+          </div>
+          <div class="text"> الفلكور الشعبي</div>
+        </div>
+      </div>
+    
+      <div class="gallery-container w-3 h-3">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba3.jpeg" alt="people">
+          </div>
+          <div class="text">الحكايات والسير الشعبية</div>
+        </div>
+      </div>
+    
+      <div class="gallery-container h-2">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba4.jpeg" alt="sport">
+          </div>
+          <div class="text">الأقوال والأمثال</div>
+        </div>
+      </div>
+    
+      <div class="gallery-container w-2">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba7.jpeg" alt="fitness">
+          </div>
+          <div class="text">الطعام</div>
+        </div>
+      </div>
+    
+      <div class="gallery-container w-4 h-1">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba5.jpeg" alt="food">
+          </div>
+          <div class="text">العادات والتقاليد</div>
+        </div>
+      </div>
+    
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <div class="image">
+            <img src="ba6.jpeg" alt="travel">
+          </div>
+          <div class="text">طقوس الزواج</div>
+        </div>
+      </div>
+    
+    
+    
+    </div> -->
+            </div>
+
+
+
+  <h1>ألغاز تراثية من الوطن العربي</h1>
+  <div class="timer" id="timer">يجب أن تضغط على "ابدأ التحدي" لبدء التحدي ⏳</div>
+
+  <button class="btns" id="startBtn" onclick="startChallenge()">ابدأ التحدي</button>
+  <div id="questions"></div>
+
+  <button  class="btns" id="checkBtn" onclick="checkAnswers()" disabled>تحقق من الإجابات</button>
+
+  <div class="result" id="result"></div>
+  <div class="details" id="details" style="display:none;"></div>
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+        <a href="index.html">	<h4><img src="logo.png" width="150px"></h4></a>
+          <ul>
+          <p>التراث غير المادي للعرب هو مرآة تعكس تنوّع المجتمعات العربية وعمق حضاراتها المتجذرة عبر العصور.</p>
+          </ul>
+        </div>
+        <div class="footer-col">
+         <h4>   أقسام الموقع: </h4>
+         <ul>
+           <li><a href="index.html"> الصفحة الرئيسية</a></li>
+           <li><a href="heritage.html"> عن التراث</a></li>
+           <li><a href="book.html"> المكتبة الرقمية </a></li>
+           <li><a href="index.html#map">  خريطه التراث</a></li>  	
+           <li><a href="qustion.html">  ألغاز تراثية    </a></li>
+            </ul>
+       </div>
+        <div class="footer-col">
+          <h4>روابط الموقع: </h4>
+          <ul>
+            <li><a href="index.html#slider">الرئيسية</a></li>
+            <li><a href="index.html#About">عن التراث</a></li>
+            <li><a href="index.html#sever">المعرض</a></li>
+            <li><a href="index.html#book">المكتبة</a></li>
+            <li><a href="index.html#map">خريطة التراث</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا على: </h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+ </footer>
+ <div class="last-coun">
+   <p> © 2025 جميع الحقوق محفوظة لـ تراث غير مادي.</p>
+  </div>
+  <script src="main.js"></script>
+    <script>
+      
+const questions = [
+  { question: "1. ما المقصود بالتراث غير المادي؟", options: ["المباني التاريخية", "العادات والتقاليد والمهارات المتوارثة", "القطع الأثرية"], correct: "العادات والتقاليد والمهارات المتوارثة" },
+  { question: "2. أي من التالي يُعد من أمثلة التراث غير المادي؟", options: ["الأسواق القديمة", " الأدوات الحجرية", "الرقصات الشعبية"], correct: "لرقصات الشعبية" },
+  { question: "3. أين يُحفظ التراث غير المادي غالبًا؟", options: ["في المتاحف فقط", "في عقول الناس وممارساتهم", "في الأسواق"], correct: "في عقول الناس وممارساتهم" },
+  { question: "4.ما أهمية الحفاظ على التراث غير المادي؟", options: ["لأنه يشكل جزءًا من هوية المجتمع وثقافته", "  لأنه نوع من التسلية", " لأنه مفيد في البناء فقط"], correct: "لأنه يشكل جزءًا من هوية المجتمع وثقافته " },
+  { question: "5.من أنواع التراث غير المادي:", options: ["العملات الفضية ", "الأبراج والمباني", "الشعر الشعبي والحداء"], correct: "الشعر الشعبي والحداء" },
+  { question: "6. كيف يمكن أن نُسهم في حفظ التراث غير المادي؟ ", options: ["بعدم نقله للآخرين", "بتوثيقه وممارسته وتعليمه", "تجاهله وتركه"], correct: "بتوثيقه وممارسته وتعليمه" },
+];
+
+const container = document.getElementById("questions");
+const startBtn = document.getElementById("startBtn");
+const checkBtn = document.getElementById("checkBtn");
+const timerDiv = document.getElementById("timer");
+const result = document.getElementById("result");
+const details = document.getElementById("details");
+
+questions.forEach((q, index) => {
+  const div = document.createElement("div");
+  div.classList.add("quiz");
+  div.innerHTML = `
+    <div class="question">${q.question}</div>
+    ${q.options.map(opt => `
+      <label>
+        <input type="radio" name="q${index}" value="${opt}"> ${opt}
+      </label><br>`).join("")}
+  `;
+  container.appendChild(div);
+});
+
+let timeLeft = 60;
+let timerInterval;
+
+function startChallenge() {
+  startBtn.disabled = true;
+  checkBtn.disabled = false;
+  result.style.display = "none";
+  details.style.display = "none";
+  timeLeft = 60;
+  timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerDiv.textContent = `الوقت المتبقي: ${timeLeft} ثانية`;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timerDiv.textContent = "⏰ انتهى الوقت!";
+      checkBtn.disabled = true;
+      result.style.display = "block";
+      result.textContent = "⏱️ لقد خسرت! انتهى الوقت.";
+      result.className = "result lose";
+    }
+  }, 1000);
+}
+
+function checkAnswers() {
+  if (timeLeft <= 0) return;
+
+  clearInterval(timerInterval);
+  checkBtn.disabled = true;
+
+  let correctCount = 0;
+  let wrongAnswers = [];
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected) {
+      if (selected.value === q.correct) {
+        correctCount++;
+      } else {
+        wrongAnswers.push({
+          number: i + 1,
+          question: q.question,
+          yourAnswer: selected.value,
+          correctAnswer: q.correct
+        });
+      }
+    } else {
+      wrongAnswers.push({
+        number: i + 1,
+        question: q.question,
+        yourAnswer: "لم يتم الإجابة",
+        correctAnswer: q.correct
+      });
+    }
+  });
+
+  result.style.display = "block";
+  details.style.display = "block";
+  details.innerHTML = `
+    <h3>تفاصيل النتائج:</h3>
+    <p>✅ عدد الإجابات الصحيحة: ${correctCount} من ${questions.length}</p>
+    <p>❌ عدد الإجابات الخاطئة أو الفارغة: ${questions.length - correctCount}</p>
+    ${wrongAnswers.length > 0 ? "<hr><h3>أسئلة أخطأت فيها:</h3>" : ""}
+    ${wrongAnswers.map(w =>
+      `<p><strong>س${w.number}:</strong> ${w.question}<br>
+      ❌ إجابتك: ${w.yourAnswer}<br>
+      ✅ الصحيح: ${w.correctAnswer}</p>`
+    ).join("")}
+  `;
+
+  if (correctCount === questions.length) {
+    result.textContent = "🎉 ألف مبروك لقد فزت بجميع الأسئلة!";
+    result.className = "result win";
+  } else {
+    result.textContent = "❌ للأسف، لم تحصل على الدرجة الكاملة.";
+    result.className = "result lose";
+  }
+}
+    </script>
+
+
+</body>
+</html>
